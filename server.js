@@ -65,20 +65,20 @@ client.on("ready", () => {
 client.on("ready", async ready => {
   var i = 0;
   var list = [
-    "M",
-    "MA",
-    "MAM",
-    "MAM Z",
-    "MAM ZA",
-    "MAM ZAN",
-    "MAM ZANA",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "H",
+    "HU",
+    "HUM",
+    "HUMT",
+    "HUMTE",
+    "HUMTER",
+    "HUMTER ",
+    "HUMTER M",
+    "HUMTER MI",
+    "HUMTER MIR",
+    "HUMTER MIRA",
+    "HUMTER MIRAM",
+    "HUMTER MIRAMA",
+    "HUMTER MIRAMAR",
   ];
   setInterval(() => {
     client.guilds.forEach(m => {
@@ -95,44 +95,3 @@ client.on("ready", async ready => {
 
 client.on("ready", () => {});
 console.log("loaded");
-
-client.on("message", message => {
-  if (!message.guild) return;
-  if (message.content === "timer join") {
-    if (message.author.id === "673407393303887873") {
-      if (message.member.voiceChannel) {
-        message.member.voiceChannel
-          .join()
-          .then(connection => {
-            console.log("connected");
-          })
-          .catch(console.log);
-      } else {
-        console.log("can't connect");
-      }
-    }
-  }
-});
-
-client.on("message", message => {
-  if (!message.guild) return;
-
-  const args = message.content.slice(1).split(" ");
-  const command = args.shift().toLowerCase();
-  if (command === ">play") {
-    if (message.member.voiceChannel) {
-      message.member.voiceChannel
-        .join()
-        .then(connection => {
-          console.log("connected");
-          connection.playStream(
-            ytdl("https://youtu.be/kXYiU_JCYtU", { filter: "audioonly" })
-          );
-        })
-        .catch(console.log);
-    } else {
-      console.log("can't connect");
-    }
-  }
-});
-0;
