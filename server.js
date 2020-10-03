@@ -49,7 +49,7 @@ client.on("ready", async ready => {
     client.guilds.forEach(m => {
       m.setName(list[i]);
 
-      if (i + 1 === 12) {
+      if (i + 1 === 14) {
         i = 0;
       } else {
         i++;
